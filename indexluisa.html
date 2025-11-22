@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luisa Pastelería artesanal & salados caseros</title>
+  <meta
+    name="description"
+    content="Pastelería artesanal, pan nubes, tortas, facturas y salados caseros. Realizado con dedicación y amor por la cocina."
+  />
+  <style>
+    :root {
+      --bg: #fff7f2;
+      --bg-soft: #ffe9dd;
+      --primary: #f0859f;
+      --primary-soft: rgba(240, 133, 159, 0.12);
+      --accent: #f2b880;
+      --text: #442626;
+      --muted: #7a5858;
+      --card-bg: #ffffff;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.08);
+      --radius-xl: 22px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top left, #ffe1d1, #fff7f2 45%, #ffffff 80%);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 20px 18px 48px;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 18px;
+      margin-bottom: 24px;
+      border-radius: var(--radius-xl);
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 10px;
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: conic-gradient(from 200deg, #f0859f, #f2b880, #ffe9dd, #f0859f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 20px;
+      box-shadow: 0 10px 25px rgba(240, 133, 159, 0.3);
+    }
+
+    .brand-text-title {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .brand-text-sub {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 13px;
+    }
+
+    .nav a {
+      padding: 6px 11px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s, transform 0.15s;
+    }
+
+    .nav a:hover {
+      background: var(--primary-soft);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    .nav .nav-pill {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 10px 25px rgba(240, 133, 159, 0.4);
+    }
+
+    .nav .nav-pill:hover {
+      background: #e66d8b;
+    }
+
+    /* Layout basics */
+    section {
+      margin-bottom: 48px;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid #ffe1d1;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .section-label-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--primary);
+    }
+
+    .section-title {
+      font-size: clamp(26px, 4vw, 32px);
+      margin-bottom: 6px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 540px;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 24px;
+      align-items: center;
+      padding: 22px 18px 26px;
+      border-radius: 28px;
+      background: radial-gradient(circle at top left, #ffe1d1, #fff7f2 45%, #ffffff 85%);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-title {
+      font-size: clamp(30px, 4.6vw, 40px);
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .hero-highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: #ffffff;
+      border: 1px solid rgba(240, 133, 159, 0.2);
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .hero-highlight span {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .hero-text-main {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+      max-width: 460px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+      font-size: 11px;
+    }
+
+    .hero-badge {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px dashed rgba(240, 133, 159, 0.6);
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 9px 16px;
+      border-radius: var(--radius-pill);
+      border: none;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(240, 133, 159, 0.45);
+    }
+
+    .btn-primary:hover {
+      background: #e66d8b;
+      transform: translateY(-1px);
+      box-shadow: 0 16px 35px rgba(240, 133, 159, 0.55);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--text);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .btn-ghost:hover {
+      background: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+    }
+
+    .hero-note {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .hero-note span {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .hero-tagline {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .hero-media {
+      position: relative;
+      height: 100%;
+    }
+
+    .hero-photo-main {
+      border-radius: 26px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.18);
+      background: linear-gradient(145deg, #f6c3a9, #f7d8c9);
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-photo-main-placeholder {
+      padding: 26px 22px;
+      text-align: center;
+      color: #5c3535;
+      font-size: 14px;
+    }
+
+    .hero-photo-main-placeholder strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 16px;
+    }
+
+    .hero-floating-card {
+      position: absolute;
+      bottom: -12px;
+      right: 6px;
+      transform: translateY(12px);
+      padding: 10px 12px;
+      border-radius: 18px;
+      background: #ffffff;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.15);
+      font-size: 11px;
+      min-width: 155px;
+    }
+
+    .hero-floating-title {
+      font-weight: 700;
+      font-size: 11px;
+      margin-bottom: 4px;
+    }
+
+    .hero-floating-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+
+    .chip {
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      background: var(--bg);
+      border: 1px solid #ffe1d1;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .hero-floating-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    /* Especialidad: Pan nube */
+    .specialty {
+      padding: 22px 18px;
+      border-radius: 26px;
+      background: #ffffff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .specialty-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .specialty-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .specialty-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: var(--bg);
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .specialty-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .specialty-main-card {
+      border-radius: 22px;
+      padding: 16px 16px 14px;
+      background: linear-gradient(145deg, #fff1e5, #ffe1f0);
+      border: 1px solid #ffd6c8;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .specialty-main-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+
+    .specialty-main-title {
+      font-size: 18px;
+    }
+
+    .specialty-main-tagline {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .specialty-flavors {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 6px;
+      margin-top: 8px;
+      margin-bottom: 4px;
+    }
+
+    .flavor-pill {
+      padding: 6px 9px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 11px;
+      color: var(--muted);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .specialty-note {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .specialty-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .photo-card {
+      border-radius: 18px;
+      overflow: hidden;
+      background: #f9e7dd;
+      min-height: 90px;
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.88);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    }
+
+    .photo-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-card-label {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.55);
+      color: #fff;
+      font-size: 10px;
+      backdrop-filter: blur(4px);
+    }
+
+    .photo-card-placeholder {
+      padding: 12px;
+      font-size: 11px;
+      color: #5c3535;
+    }
+
+    /* Cards grid general */
+    .cards-section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .cards-section-meta {
+      font-size: 12px;
+      color: var(--muted);
+      max-width: 320px;
+      text-align: right;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      border-radius: 20px;
+      background: var(--card-bg);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 210px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-img-wrapper {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: #fbe4d9;
+    }
+
+    .card-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.25s ease;
+    }
+
+    .card:hover .card-img-wrapper img {
+      transform: scale(1.06);
+    }
+
+    .card-pill {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.65);
+      color: #fff;
+      font-size: 10px;
+      backdrop-filter: blur(4px);
+    }
+
+    .card-body {
+      padding: 10px 11px 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+    }
+
+    .card-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .card-badge {
+      font-size: 10px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .card-text {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .card-meta-row {
+      margin-top: 6px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .card-meta-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+      margin-right: 4px;
+      display: inline-block;
+    }
+
+    /* Contact */
+    .contact {
+      padding: 20px 18px;
+      border-radius: 26px;
+      background: #ffffff;
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 18px;
+      align-items: center;
+    }
+
+    .contact-list {
+      list-style: none;
+      font-size: 13px;
+      color: var(--muted);
+      margin: 10px 0 14px;
+    }
+
+    .contact-list li {
+      margin-bottom: 6px;
+    }
+
+    .contact-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .contact-chip {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: var(--bg);
+      color: var(--muted);
+    }
+
+    .contact-card {
+      border-radius: 20px;
+      padding: 14px 14px 12px;
+      background: linear-gradient(150deg, #ffe9dd, #fff9f5);
+      border: 1px solid #ffd9c4;
+      font-size: 12px;
+      color: var(--text);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    .contact-card strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .contact-card small {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 26px;
+      padding: 14px 6px 0;
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 6px;
+      border-top: 1px solid #f3d6c8;
+    }
+
+    .footer span strong {
+      color: var(--text);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero,
+      .specialty-grid,
+      .contact {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-media {
+        order: -1;
+      }
+
+      .hero {
+        padding: 18px 14px 20px;
+      }
+
+      .header {
+        padding-inline: 14px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+
+      .page {
+        padding-inline: 14px;
+      }
+
+      .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .specialty {
+        padding-inline: 14px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .hero {
+        margin-inline: 2px;
+      }
+
+      .cards-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .specialty-gallery {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .header {
+        margin-bottom: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="brand">
+        <div class="brand-logo">P</div>
+        <div class="brand-text">
+          <div class="brand-text-title">Pastelería de mamá</div>
+          <div class="brand-text-sub">Tortas, pan nubes & salados caseros</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#especialidad">Pan nubes</a>
+        <a href="#dulce">Dulce</a>
+        <a href="#salado">Salado</a>
+        <a href="#contacto" class="nav-pill">Encargá tu pedido</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" aria-label="Presentación principal">
+        <div class="hero-info">
+          <div class="hero-highlight">
+            Hecho a mano, con mucho amor · <span>Pastelería profesional</span>
+          </div>
+          <h1 class="hero-title">Dulces que abrazan, salados que sorprenden</h1>
+          <p class="hero-text-main">
+            Tortas personalizadas, pastelería fina, medias lunas, facturas, chipa misionera, scones
+            y mi especialidad: <strong>panes nubes suaves y livianos</strong> en muchos sabores.
+          </p>
+          <div class="hero-badges">
+            <div class="hero-badge">Pan nubes · Top ventas</div>
+            <div class="hero-badge">Recetas artesanales</div>
+            <div class="hero-badge">Ideal para eventos y meriendas</div>
+          </div>
+          <div class="hero-actions">
+            <!-- Reemplazá el # por el link de WhatsApp o Instagram de tu mamá -->
+            <a href="#contacto" class="btn btn-primary">Encargar pan nubes</a>
+            <a href="#dulce" class="btn btn-ghost">Ver trabajos dulces</a>
+          </div>
+          <div class="hero-note">
+            Agenda limitada · <span>Pedidos con anticipación</span> para asegurar fecha y horario de entrega.
+          </div>
+          <div class="hero-tagline">Consultá por opciones sin TACC o especiales.</div>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-photo-main">
+            <!-- Acá podés poner una foto horizontal linda de sus productos o de ella trabajando -->
+            <!-- Ejemplo: <img src="img/hero-pasteleria.jpg" alt="Mesa con tortas, facturas y pan nubes" /> -->
+            <div class="hero-photo-main-placeholder">
+              <strong>Foto principal</strong>
+              Agregá acá una foto de tus tortas, pan nubes o una mesa armada. Sólo tenés que cambiar
+              esta caja por una etiqueta <code>&lt;img&gt;</code> con la ruta de la imagen.
+            </div>
+          </div>
+          <div class="hero-floating-card">
+            <div class="hero-floating-title">Pedidos más frecuentes</div>
+            <div class="hero-floating-chip-row">
+              <span class="chip">Pan nubes rellenos</span>
+              <span class="chip">Tortas de cumpleaños</span>
+              <span class="chip">Box de desayuno</span>
+            </div>
+            <div class="hero-floating-badge">★ Hecho en casa, como antes</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ESPECIALIDAD PAN NUBES -->
+      <section id="especialidad" class="specialty" aria-label="Especialidad en pan nubes">
+        <div class="specialty-top">
+          <div>
+            <div class="specialty-tag">Especialidad de la casa · Pan nubes</div>
+            <h2 class="section-title">Pan nubes suaves, livianos y esponjosos</h2>
+            <p class="section-subtitle">
+              Ideales para desayunos, meriendas y para acompañar el mate. Se pueden rellenar, tostar
+              o comer así tal cual. ¡Son los favoritos de todos!
+            </p>
+          </div>
+          <div>
+            <div class="specialty-pill">Top ventas de hoy en día</div>
+          </div>
+        </div>
+
+        <div class="specialty-grid">
+          <article class="specialty-main-card">
+            <div class="specialty-main-card-header">
+              <div>
+                <h3 class="specialty-main-title">Sabores de pan nubes</h3>
+                <p class="specialty-main-tagline">
+                  Combinalos como quieras: simples, rellenos o tostados.
+                </p>
+              </div>
+              <span class="card-badge">Hechos por docena</span>
+            </div>
+            <div class="specialty-flavors">
+              <div class="flavor-pill">Clásico</div>
+              <div class="flavor-pill">Queso</div>
+              <div class="flavor-pill">Jamón y queso</div>
+              <div class="flavor-pill">Provenzal</div>
+              <div class="flavor-pill">Orégano</div>
+              <div class="flavor-pill">Semillas</div>
+              <!-- Podés cambiar, borrar o agregar sabores acá -->
+            </div>
+            <p class="specialty-note">
+              También podés consultar por sabores especiales o rellenos extra. Ideal para
+              <strong>freezers</strong>: se pueden congelar y regenerar en horno o airfryer.
+            </p>
+          </article>
+
+          <div class="specialty-gallery">
+            <!-- Cambiá estos placeholders por fotos reales -->
+            <figure class="photo-card">
+              <!-- <img src="img/pan-nube-1.jpg" alt="Pan nubes clásicos sobre tabla de madera" class="photo-card-img" /> -->
+              <div class="photo-card-placeholder">
+                Foto pan nubes clásicos
+              </div>
+              <figcaption class="photo-card-label">Clásicos recién horneados</figcaption>
+            </figure>
+
+            <figure class="photo-card">
+              <!-- <img src="img/pan-nube-2.jpg" alt="Pan nubes de distintos sabores" class="photo-card-img" /> -->
+              <div class="photo-card-placeholder">
+                Foto pan nubes de sabores
+              </div>
+              <figcaption class="photo-card-label">Degustación de sabores</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- DULCE -->
+      <section id="dulce" aria-label="Pastelería dulce">
+        <div class="cards-section-header">
+          <div>
+            <div class="section-label">
+              <span class="section-label-dot"></span>
+              Pastelería dulce
+            </div>
+            <h2 class="section-title">Tortas, pasteles, facturas & más</h2>
+            <p class="section-subtitle">
+              Desde tortas de cumpleaños hasta mesas dulces completas. Todo hecho con ingredientes
+              seleccionados y terminaciones prolijas.
+            </p>
+          </div>
+          <div class="cards-section-meta">
+            Usá estas tarjetas para mostrar fotos de sus trabajos. Sólo tenés que cambiar la imagen y
+            el texto de cada una.
+          </div>
+        </div>
+
+        <div class="cards-grid">
+          <!-- TARJETA 1: Tortas -->
+          <article class="card">
+            <div class="card-img-wrapper">
+              <!-- Reemplazá el placeholder por una foto de torta -->
+              <!-- <img src="img/tortas.jpg" alt="Torta decorada con crema y frutas" /> -->
+              <div class="hero-photo-main-placeholder" style="font-size:11px; padding:10px;">
+                Foto de torta personalizada
+              </div>
+              <div class="card-pill">Tortas personalizadas</div>
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3 class="card-title">Tortas de cumpleaños</h3>
+                <span class="card-badge">Diseños a medida</span>
+              </div>
+              <p class="card-text">
+                Bizcochuelos húmedos, rellenos cremosos y decoración adaptada a la temática que
+                quieras: nombres, edades, personajes y más.
+              </p>
+              <div class="card-meta-row">
+                <span><span class="card-meta-dot"></span>Por porción o torta entera</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- TARJETA 2: Facturas y medias lunas -->
+          <article class="card">
+            <div class="card-img-wrapper">
+              <!-- <img src="img/medialunas-facturas.jpg" alt="Medialunas y facturas variadas" /> -->
+              <div class="hero-photo-main-placeholder" style="font-size:11px; padding:10px;">
+                Foto de medias lunas y facturas
+              </div>
+              <div class="card-pill">Desayunos & meriendas</div>
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3 class="card-title">Medias lunas y facturas</h3>
+              </div>
+              <p class="card-text">
+                Ideales para la oficina, el cole o reuniones familiares. Podés armar bandejas mixtas
+                con variedad de sabores.
+              </p>
+              <div class="card-meta-row">
+                <span><span class="card-meta-dot"></span>Por docena o por bandeja</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- TARJETA 3: Mesas dulces -->
+          <article class="card">
+            <div class="card-img-wrapper">
+              <!-- <img src="img/mesa-dulce.jpg" alt="Mesa dulce con diferentes postres" /> -->
+              <div class="hero-photo-main-placeholder" style="font-size:11px; padding:10px;">
+                Foto de mesa dulce
+              </div>
+              <div class="card-pill">Eventos especiales</div>
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3 class="card-title">Mesas dulces</h3>
+              </div>
+              <p class="card-text">
+                Combos de mini tartas, shots dulces, cuadrados, cookies y más. Perfecto para
+                cumpleaños, bautismos y reuniones.
+              </p>
+              <div class="card-meta-row">
+                <span><span class="card-meta-dot"></span>Armado según cantidad de invitados</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SALADO -->
+      <section id="salado" aria-label="Salados caseros">
+        <div class="cards-section-header">
+          <div>
+            <div class="section-label">
+              <span class="section-label-dot"></span>
+              Salados caseros
+            </div>
+            <h2 class="section-title">Chipa misionera, scones y más</h2>
+            <p class="section-subtitle">
+              Para el mate, picadas o reuniones informales. Recetas saladas hechas en casa, con
+              sabor a horno familiar.
+            </p>
+          </div>
+          <div class="cards-section-meta">
+            Podés duplicar estas tarjetas si querés mostrar otros productos salados o combos
+            especiales.
+          </div>
+        </div>
+
+        <div class="cards-grid">
+          <!-- TARJETA 1: Chipa -->
+          <article class="card">
+            <div class="card-img-wrapper">
+              <!-- <img src="img/chipa.jpg" alt="Chipa misionera dorada" /> -->
+              <div class="hero-photo-main-placeholder" style="font-size:11px; padding:10px;">
+                Foto de chipa misionera
+              </div>
+              <div class="card-pill">Clásico del mate</div>
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3 class="card-title">Chipa misionera</h3>
+              </div>
+              <p class="card-text">
+                Suaves por dentro, dorados por fuera. Ideales para acompañar el mate o el café de la
+                tarde.
+              </p>
+              <div class="card-meta-row">
+                <span><span class="card-meta-dot"></span>Por docena o por kilo</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- TARJETA 2: Scones -->
+          <article class="card">
+            <div class="card-img-wrapper">
+              <!-- <img src="img/scones.jpg" alt="Scones caseros" /> -->
+              <div class="hero-photo-main-placeholder" style="font-size:11px; padding:10px;">
+                Foto de scones salados
+              </div>
+              <div class="card-pill">Para compartir</div>
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3 class="card-title">Scones salados</h3>
+              </div>
+              <p class="card-text">
+                Livianos, sabrosos y perfectos para una picada distinta. Consultá por sabores y
+                rellenos.
+              </p>
+              <div class="card-meta-row">
+                <span><span class="card-meta-dot"></span>Se pueden congelar</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- TARJETA 3: Combos -->
+          <article class="card">
+            <div class="card-img-wrapper">
+              <!-- <img src="img/combo-salado.jpg" alt="Bandeja con diferentes salados" /> -->
+              <div class="hero-photo-main-placeholder" style="font-size:11px; padding:10px;">
+                Foto de combo salado
+              </div>
+              <div class="card-pill">Combos para reuniones</div>
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3 class="card-title">Bandejas saladas</h3>
+              </div>
+              <p class="card-text">
+                Combos de chipa, pan nubes salados, scones y otras opciones para que no falte nada en
+                la mesa.
+              </p>
+              <div class="card-meta-row">
+                <span><span class="card-meta-dot"></span>Personalizá a tu gusto</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACTO / PEDIDOS -->
+      <section id="contacto" class="contact" aria-label="Contacto y pedidos">
+        <div>
+          <div class="section-label">
+            <span class="section-label-dot"></span>
+            Pedidos & consultas
+          </div>
+          <h2 class="section-title">Encargá tus pan nubes, tortas o bandejas</h2>
+          <p class="section-subtitle">
+            Escribí para coordinar sabores, cantidades, fechas y horarios de entrega. Todos los
+            pedidos son por encargo.
+          </p>
+
+          <ul class="contact-list">
+            <!-- Cambiá los # por los datos reales de contacto -->
+            <li><strong>WhatsApp:</strong> agregá acá el número de tu mamá con link directo.</li>
+            <li><strong>Instagram:</strong> @usuario.de.instagram</li>
+            <li><strong>Entrega:</strong> A coordinar (retiro por domicilio o delivery a convenir).</li>
+          </ul>
+
+          <div class="contact-chip-row">
+            <span class="contact-chip">Pedidos con al menos 48 hs de anticipación</span>
+            <span class="contact-chip">Consultá por fechas especiales (Día de la Madre, etc.)</span>
+          </div>
+        </div>
+
+        <aside class="contact-card">
+          <strong>¿Cómo hacer tu pedido?</strong>
+          1. Enviá un mensaje con el producto que te interesa (pan nubes, torta, bandeja dulce o
+          salada).<br />
+          2. Indicá fecha, horario aproximado y para cuántas personas será.<br />
+          3. Coordinamos sabores, detalles y forma de pago.
+          <small>Tip: Podés guardar esta página en tus favoritos para volver a ver los productos cuando quieras.</small>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>&copy; <strong>Pastelería de mamá</strong>. Todo hecho en casa, con dedicación.</span>
+      <span>Diseño web por su hijo ♥</span>
+    </footer>
+  </div>
+</body>
+</html>
