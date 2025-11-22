@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luisa Pastelería artesanal & salados caseros</title>
+  <title>Pastelería Luisa · Pan nubes, tortas & salados</title>
   <meta
     name="description"
-    content="Pastelería artesanal, pan nubes, tortas, facturas y salados caseros. Realizado con dedicación y amor por la cocina."
+    content="Pastelería artesanal de Luisa: pan nubes, tortas, facturas, chipa misionera, scones y más. Encargos por WhatsApp."
   />
   <style>
     :root {
-      --bg: #fff7f2;
-      --bg-soft: #ffe9dd;
-      --primary: #f0859f;
-      --primary-soft: rgba(240, 133, 159, 0.12);
-      --accent: #f2b880;
+      --bg: #fff9f4;
+      --bg-alt: #fff2ea;
+      --primary: #ff7ba9;
+      --primary-dark: #f25c90;
+      --secondary: #ffb86c;
+      --accent: #7fd8d5;
       --text: #442626;
       --muted: #7a5858;
       --card-bg: #ffffff;
@@ -30,9 +31,10 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
       color: var(--text);
-      background: radial-gradient(circle at top left, #ffe1d1, #fff7f2 45%, #ffffff 80%);
+      background: radial-gradient(circle at top left, #ffe1d1, #fff9f4 40%, #ffffff 80%);
       min-height: 100vh;
       line-height: 1.6;
     }
@@ -50,7 +52,7 @@
     .page {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 20px 18px 48px;
+      padding: 20px 18px 80px;
     }
 
     /* Header */
@@ -59,15 +61,15 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      padding: 10px 18px;
+      padding: 10px 16px;
       margin-bottom: 24px;
       border-radius: var(--radius-xl);
-      background: rgba(255, 255, 255, 0.86);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
       backdrop-filter: blur(10px);
       position: sticky;
       top: 10px;
-      z-index: 10;
+      z-index: 20;
     }
 
     .brand {
@@ -77,17 +79,23 @@
     }
 
     .brand-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 14px;
-      background: conic-gradient(from 200deg, #f0859f, #f2b880, #ffe9dd, #f0859f);
+      width: 42px;
+      height: 42px;
+      border-radius: 16px;
+      background: conic-gradient(
+        from 210deg,
+        #ff7ba9,
+        #ffb86c,
+        #7fd8d5,
+        #ff7ba9
+      );
       display: flex;
       align-items: center;
       justify-content: center;
       color: #fff;
-      font-weight: 700;
-      font-size: 20px;
-      box-shadow: 0 10px 25px rgba(240, 133, 159, 0.3);
+      font-weight: 800;
+      font-size: 22px;
+      box-shadow: 0 10px 25px rgba(240, 133, 159, 0.4);
     }
 
     .brand-text-title {
@@ -105,12 +113,12 @@
     .nav {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 10px;
       font-size: 13px;
     }
 
     .nav a {
-      padding: 6px 11px;
+      padding: 6px 10px;
       border-radius: 999px;
       color: var(--muted);
       font-weight: 500;
@@ -118,7 +126,7 @@
     }
 
     .nav a:hover {
-      background: var(--primary-soft);
+      background: rgba(255, 123, 169, 0.09);
       color: var(--text);
       transform: translateY(-1px);
     }
@@ -126,16 +134,52 @@
     .nav .nav-pill {
       background: var(--primary);
       color: #fff;
-      box-shadow: 0 10px 25px rgba(240, 133, 159, 0.4);
+      box-shadow: 0 10px 25px rgba(255, 123, 169, 0.5);
     }
 
     .nav .nav-pill:hover {
-      background: #e66d8b;
+      background: var(--primary-dark);
     }
 
-    /* Layout basics */
+    .cart-mini {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      background: #fff7fd;
+      font-size: 12px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.15s;
+    }
+
+    .cart-mini:hover {
+      background: #ffe1f1;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+    }
+
+    .cart-mini-icon {
+      width: 16px;
+      height: 16px;
+      border-radius: 6px;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+    }
+
+    .cart-mini-count {
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    /* Sections */
     section {
-      margin-bottom: 48px;
+      margin-bottom: 52px;
     }
 
     .section-label {
@@ -177,7 +221,12 @@
       align-items: center;
       padding: 22px 18px 26px;
       border-radius: 28px;
-      background: radial-gradient(circle at top left, #ffe1d1, #fff7f2 45%, #ffffff 85%);
+      background: linear-gradient(
+        135deg,
+        #ffe8f1,
+        #fff2ea 45%,
+        #ffffff 90%
+      );
       box-shadow: var(--shadow-soft);
     }
 
@@ -246,20 +295,21 @@
       font-size: 13px;
       font-weight: 600;
       cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      transition: transform 0.15s ease, box-shadow 0.15s ease,
+        background 0.15s ease;
       white-space: nowrap;
     }
 
     .btn-primary {
       background: var(--primary);
       color: #fff;
-      box-shadow: 0 12px 30px rgba(240, 133, 159, 0.45);
+      box-shadow: 0 12px 30px rgba(255, 123, 169, 0.5);
     }
 
     .btn-primary:hover {
-      background: #e66d8b;
+      background: var(--primary-dark);
       transform: translateY(-1px);
-      box-shadow: 0 16px 35px rgba(240, 133, 159, 0.55);
+      box-shadow: 0 16px 35px rgba(255, 123, 169, 0.6);
     }
 
     .btn-ghost {
@@ -284,12 +334,6 @@
       font-weight: 600;
     }
 
-    .hero-tagline {
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 6px;
-    }
-
     .hero-media {
       position: relative;
       height: 100%;
@@ -308,17 +352,10 @@
       position: relative;
     }
 
-    .hero-photo-main-placeholder {
-      padding: 26px 22px;
-      text-align: center;
-      color: #5c3535;
-      font-size: 14px;
-    }
-
-    .hero-photo-main-placeholder strong {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 16px;
+    .hero-photo-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .hero-floating-card {
@@ -331,7 +368,7 @@
       background: #ffffff;
       box-shadow: 0 14px 35px rgba(0, 0, 0, 0.15);
       font-size: 11px;
-      min-width: 155px;
+      min-width: 170px;
     }
 
     .hero-floating-title {
@@ -362,13 +399,13 @@
       gap: 4px;
       padding: 3px 7px;
       border-radius: 999px;
-      background: var(--primary-soft);
-      color: var(--primary);
+      background: rgba(127, 216, 213, 0.18);
+      color: #228885;
       font-size: 10px;
       font-weight: 600;
     }
 
-    /* Especialidad: Pan nube */
+    /* Especialidad pan nubes */
     .specialty {
       padding: 22px 18px;
       border-radius: 26px;
@@ -392,8 +429,8 @@
       padding: 4px 10px;
       border-radius: 12px;
       font-size: 11px;
-      background: var(--primary-soft);
-      color: var(--primary);
+      background: rgba(255, 123, 169, 0.14);
+      color: var(--primary-dark);
       font-weight: 600;
     }
 
@@ -403,7 +440,7 @@
       gap: 6px;
       padding: 4px 10px;
       border-radius: var(--radius-pill);
-      background: var(--bg);
+      background: var(--bg-alt);
       font-size: 11px;
       color: var(--muted);
     }
@@ -418,7 +455,7 @@
     .specialty-main-card {
       border-radius: 22px;
       padding: 16px 16px 14px;
-      background: linear-gradient(145deg, #fff1e5, #ffe1f0);
+      background: linear-gradient(145deg, #fff1e5, #ffe4f4);
       border: 1px solid #ffd6c8;
       display: flex;
       flex-direction: column;
@@ -484,7 +521,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
 
     .photo-card-label {
@@ -497,12 +533,6 @@
       color: #fff;
       font-size: 10px;
       backdrop-filter: blur(4px);
-    }
-
-    .photo-card-placeholder {
-      padding: 12px;
-      font-size: 11px;
-      color: #5c3535;
     }
 
     /* Cards grid general */
@@ -534,7 +564,7 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      min-height: 210px;
+      min-height: 220px;
       transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
@@ -577,7 +607,7 @@
       padding: 10px 11px 11px;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 6px;
       flex: 1;
     }
 
@@ -597,8 +627,8 @@
       font-size: 10px;
       padding: 3px 7px;
       border-radius: 999px;
-      background: var(--primary-soft);
-      color: var(--primary);
+      background: rgba(127, 216, 213, 0.2);
+      color: #1f7b78;
       font-weight: 600;
     }
 
@@ -608,23 +638,122 @@
     }
 
     .card-meta-row {
-      margin-top: 6px;
+      margin-top: 3px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       font-size: 11px;
       color: var(--muted);
+      gap: 4px;
     }
 
     .card-meta-dot {
       width: 6px;
       height: 6px;
       border-radius: 999px;
-      background: var(--accent);
+      background: var(--secondary);
       margin-right: 4px;
       display: inline-block;
     }
 
-    /* Contact */
+    .price {
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .btn-add {
+      padding: 6px 10px;
+      font-size: 11px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      background: var(--primary);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn-add:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(255, 123, 169, 0.5);
+    }
+
+    .btn-add span {
+      font-size: 13px;
+    }
+
+    /* Acerca de mí */
+    .about {
+      padding: 22px 18px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, #fff2ea, #ffe9f5);
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+      gap: 18px;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .about-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .about-badge {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: #fff;
+      border: 1px dashed rgba(0, 0, 0, 0.06);
+      color: var(--muted);
+    }
+
+    .about-tag {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(127, 216, 213, 0.18);
+      color: #1f7b78;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .about-highlight {
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 6px;
+      color: var(--text);
+    }
+
+    .about-card {
+      border-radius: 18px;
+      background: #ffffff;
+      padding: 12px 14px;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.07);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .about-card strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    /* Contacto */
     .contact {
       padding: 20px 18px;
       border-radius: 26px;
@@ -658,7 +787,7 @@
       font-size: 11px;
       padding: 4px 10px;
       border-radius: var(--radius-pill);
-      background: var(--bg);
+      background: var(--bg-alt);
       color: var(--muted);
     }
 
@@ -700,11 +829,127 @@
       color: var(--text);
     }
 
+    /* Carrito flotante */
+    .cart-panel {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      width: 320px;
+      max-height: 70vh;
+      border-radius: 18px;
+      background: #ffffff;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+      padding: 12px 12px 10px;
+      display: none;
+      flex-direction: column;
+      z-index: 40;
+    }
+
+    .cart-panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .cart-panel-title {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .cart-panel-close {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 1;
+      color: var(--muted);
+    }
+
+    .cart-items {
+      list-style: none;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 8px;
+      max-height: 36vh;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+
+    .cart-item-name {
+      flex: 1;
+    }
+
+    .cart-item-qty {
+      font-size: 11px;
+      color: var(--text);
+    }
+
+    .cart-summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+
+    .cart-total {
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .cart-empty {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 8px 0;
+    }
+
+    .cart-actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .btn-cart-secondary {
+      flex: 1;
+      font-size: 11px;
+      padding: 6px 8px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      background: #fff9f4;
+      cursor: pointer;
+    }
+
+    .btn-cart-primary {
+      flex: 1.2;
+      font-size: 11px;
+      padding: 6px 8px;
+      border-radius: var(--radius-pill);
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(255, 123, 169, 0.5);
+    }
+
+    .btn-cart-primary:hover {
+      background: var(--primary-dark);
+    }
+
     /* Responsive */
     @media (max-width: 900px) {
       .hero,
       .specialty-grid,
-      .contact {
+      .contact,
+      .about {
         grid-template-columns: minmax(0, 1fr);
       }
 
@@ -737,6 +982,12 @@
       .specialty {
         padding-inline: 14px;
       }
+
+      .cart-panel {
+        right: 10px;
+        left: 10px;
+        width: auto;
+      }
     }
 
     @media (max-width: 540px) {
@@ -762,18 +1013,23 @@
   <div class="page">
     <header class="header">
       <div class="brand">
-        <div class="brand-logo">P</div>
+        <div class="brand-logo">L</div>
         <div class="brand-text">
-          <div class="brand-text-title">Pastelería de mamá</div>
-          <div class="brand-text-sub">Tortas, pan nubes & salados caseros</div>
+          <div class="brand-text-title">Pastelería Luisa</div>
+          <div class="brand-text-sub">Pan nubes · Tortas · Salados caseros</div>
         </div>
       </div>
       <nav class="nav">
         <a href="#especialidad">Pan nubes</a>
         <a href="#dulce">Dulce</a>
         <a href="#salado">Salado</a>
+        <a href="#acerca">Acerca de mí</a>
         <a href="#contacto" class="nav-pill">Encargá tu pedido</a>
       </nav>
+      <button class="cart-mini" type="button" id="open-cart-mini">
+        <div class="cart-mini-icon">🛒</div>
+        <span>Carrito • <span class="cart-mini-count" id="cart-count">0</span> items</span>
+      </button>
     </header>
 
     <main>
@@ -781,40 +1037,37 @@
       <section class="hero" aria-label="Presentación principal">
         <div class="hero-info">
           <div class="hero-highlight">
-            Hecho a mano, con mucho amor · <span>Pastelería profesional</span>
+            Hecho a mano, por encargo · <span>Pastelería profesional</span>
           </div>
-          <h1 class="hero-title">Dulces que abrazan, salados que sorprenden</h1>
+          <h1 class="hero-title">Dulces que abrazan, salados que acompañan</h1>
           <p class="hero-text-main">
-            Tortas personalizadas, pastelería fina, medias lunas, facturas, chipa misionera, scones
-            y mi especialidad: <strong>panes nubes suaves y livianos</strong> en muchos sabores.
+            Pan nubes suaves, tortas de cumpleaños, facturas, chipa misionera, scones
+            y más. Todo hecho por Luisa con recetas caseras y muchos años de experiencia.
           </p>
           <div class="hero-badges">
-            <div class="hero-badge">Pan nubes · Top ventas</div>
-            <div class="hero-badge">Recetas artesanales</div>
-            <div class="hero-badge">Ideal para eventos y meriendas</div>
+            <div class="hero-badge">Pan nubes · Lo más pedido</div>
+            <div class="hero-badge">Ideal para mate, desayunos y eventos</div>
+            <div class="hero-badge">Encargos personalizados</div>
           </div>
           <div class="hero-actions">
-            <!-- Reemplazá el # por el link de WhatsApp o Instagram de tu mamá -->
-            <a href="#contacto" class="btn btn-primary">Encargar pan nubes</a>
-            <a href="#dulce" class="btn btn-ghost">Ver trabajos dulces</a>
+            <a href="#especialidad" class="btn btn-primary">Ver pan nubes</a>
+            <a href="#dulce" class="btn btn-ghost">Ver pastelería dulce</a>
           </div>
           <div class="hero-note">
-            Agenda limitada · <span>Pedidos con anticipación</span> para asegurar fecha y horario de entrega.
+            Cupos por semana · <span>Reservá con anticipación</span> para asegurar fecha.
           </div>
-          <div class="hero-tagline">Consultá por opciones sin TACC o especiales.</div>
         </div>
 
         <div class="hero-media">
-         <div class="hero-photo-main">
-  <img src="img/hero-pan-nubes.JPG"
-       alt="Mesa con pan nubes, tortas y productos de la pastelería" />
-</div>
+          <div class="hero-photo-main">
+            <img src="img/hero-pan-nubes.JPG" alt="Mesa con pan nubes, tortas y productos de pastelería" />
+          </div>
           <div class="hero-floating-card">
             <div class="hero-floating-title">Pedidos más frecuentes</div>
             <div class="hero-floating-chip-row">
-              <span class="chip">Pan nubes rellenos</span>
+              <span class="chip">Pan nubes por docena</span>
               <span class="chip">Tortas de cumpleaños</span>
-              <span class="chip">Box de desayuno</span>
+              <span class="chip">Bandejas dulces y saladas</span>
             </div>
             <div class="hero-floating-badge">★ Hecho en casa, como antes</div>
           </div>
@@ -825,7 +1078,7 @@
       <section id="especialidad" class="specialty" aria-label="Especialidad en pan nubes">
         <div class="specialty-top">
           <div>
-            <div class="specialty-tag">Especialidad de la casa · Pan nubes</div>
+            <div class="specialty-tag">Especialidad · Pan nubes</div>
             <h2 class="section-title">Pan nubes suaves, livianos y esponjosos</h2>
             <p class="section-subtitle">
               Ideales para desayunos, meriendas y para acompañar el mate. Se pueden rellenar, tostar
@@ -855,30 +1108,44 @@
               <div class="flavor-pill">Provenzal</div>
               <div class="flavor-pill">Orégano</div>
               <div class="flavor-pill">Semillas</div>
-              <!-- Podés cambiar, borrar o agregar sabores acá -->
             </div>
             <p class="specialty-note">
-              También podés consultar por sabores especiales o rellenos extra. Ideal para
-              <strong>freezers</strong>: se pueden congelar y regenerar en horno o airfryer.
+              Consultá por sabores especiales o rellenos extra. Se pueden
+              <strong>congelar</strong> y regenerar en horno o airfryer.
             </p>
+            <div class="card-meta-row" style="margin-top:10px;">
+              <span><span class="card-meta-dot"></span>Precio referencia</span>
+              <span class="price">$4.500 / docena (ejemplo)</span>
+            </div>
+            <button
+              class="btn-add"
+              type="button"
+              data-add-to-cart
+              data-name="Pan nubes surtidos (docena)"
+              data-price="4500"
+            >
+              <span>+</span> Agregar al carrito
+            </button>
           </article>
 
           <div class="specialty-gallery">
             <figure class="photo-card">
-               <img src="img/pan-nube-1.jpg"
-                      alt="Pan nubes clásicos sobre tabla de madera"
-                      class="photo-card-img" />
-               <figcaption class="photo-card-label">Clásicos recién horneados</figcaption>
+              <img
+                src="img/pan-nube-1.jpg"
+                alt="Pan nubes clásicos sobre tabla de madera"
+                class="photo-card-img"
+              />
+              <figcaption class="photo-card-label">Clásicos recién horneados</figcaption>
             </figure>
-
 
             <figure class="photo-card">
-               <img src="img/pan-nube-2.jpg"
-                       alt="Pan nubes de diferentes sabores"
-                       class="photo-card-img" />
-               <figcaption class="photo-card-label">Degustación de sabores</figcaption>
+              <img
+                src="img/pan-nube-2.jpg"
+                alt="Pan nubes de distintos sabores"
+                class="photo-card-img"
+              />
+              <figcaption class="photo-card-label">Degustación de sabores</figcaption>
             </figure>
-
           </div>
         </div>
       </section>
@@ -891,29 +1158,27 @@
               <span class="section-label-dot"></span>
               Pastelería dulce
             </div>
-            <h2 class="section-title">Tortas, pasteles, facturas & más</h2>
+            <h2 class="section-title">Tortas, facturas & mesas dulces</h2>
             <p class="section-subtitle">
-              Desde tortas de cumpleaños hasta mesas dulces completas. Todo hecho con ingredientes
-              seleccionados y terminaciones prolijas.
+              Desde tortas de cumpleaños hasta bandejas completas para compartir. Todo hecho con
+              ingredientes seleccionados y terminaciones prolijas.
             </p>
           </div>
           <div class="cards-section-meta">
-            Usá estas tarjetas para mostrar fotos de sus trabajos. Sólo tenés que cambiar la imagen y
-            el texto de cada una.
+            Elegí un producto y agrégalo al carrito para calcular cantidades y total de tu pedido.
           </div>
         </div>
 
         <div class="cards-grid">
-          <!-- TARJETA 1: Tortas -->
+          <!-- TORTAS -->
           <article class="card">
             <div class="card-img-wrapper">
-              <img src="img/torta-1.JPG"
-                  alt="Torta de cumpleaños decorada con crema y frutas" />
+              <img src="img/torta-1.JPG" alt="Torta de cumpleaños decorada con crema y frutas" />
               <div class="card-pill">Tortas personalizadas</div>
             </div>
             <div class="card-body">
               <div class="card-title-row">
-                <h3 class="card-title">Tortas de cumpleaños</h3>
+                <h3 class="card-title">Torta de cumpleaños</h3>
                 <span class="card-badge">Diseños a medida</span>
               </div>
               <p class="card-text">
@@ -921,21 +1186,30 @@
                 quieras: nombres, edades, personajes y más.
               </p>
               <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Por porción o torta entera</span>
+                <span><span class="card-meta-dot"></span>Para 12 a 20 porciones</span>
+                <span class="price">$18.000 (ejemplo)</span>
               </div>
+              <button
+                class="btn-add"
+                type="button"
+                data-add-to-cart
+                data-name="Torta de cumpleaños"
+                data-price="18000"
+              >
+                <span>+</span> Agregar al carrito
+              </button>
             </div>
           </article>
 
-          <!-- TARJETA 2: Facturas y medias lunas -->
+          <!-- FACTURAS -->
           <article class="card">
             <div class="card-img-wrapper">
-              <img src="img/facturas-1.JPG"
-                  alt="Medialunas y facturas variadas" />
+              <img src="img/facturas-1.JPG" alt="Medialunas y facturas variadas" />
               <div class="card-pill">Desayunos & meriendas</div>
             </div>
             <div class="card-body">
               <div class="card-title-row">
-                <h3 class="card-title">Medias lunas y facturas</h3>
+                <h3 class="card-title">Medialunas y facturas</h3>
               </div>
               <p class="card-text">
                 Ideales para la oficina, el cole o reuniones familiares. Podés armar bandejas mixtas
@@ -943,28 +1217,47 @@
               </p>
               <div class="card-meta-row">
                 <span><span class="card-meta-dot"></span>Por docena o por bandeja</span>
+                <span class="price">$5.200 / docena (ejemplo)</span>
               </div>
+              <button
+                class="btn-add"
+                type="button"
+                data-add-to-cart
+                data-name="Docena de facturas surtidas"
+                data-price="5200"
+              >
+                <span>+</span> Agregar al carrito
+              </button>
             </div>
           </article>
 
-          <!-- TARJETA 3: Mesas dulces -->
+          <!-- MESA DULCE -->
           <article class="card">
             <div class="card-img-wrapper">
-              <img src="img/mesa-dulce-1.JPG"
-                    alt="Mesa dulce con diferentes postres y mini tartas" />
+              <img src="img/mesa-dulce-1.JPG" alt="Mesa dulce con diferentes postres" />
               <div class="card-pill">Eventos especiales</div>
             </div>
             <div class="card-body">
               <div class="card-title-row">
-                <h3 class="card-title">Mesas dulces</h3>
+                <h3 class="card-title">Mesa dulce</h3>
               </div>
               <p class="card-text">
                 Combos de mini tartas, shots dulces, cuadrados, cookies y más. Perfecto para
                 cumpleaños, bautismos y reuniones.
               </p>
               <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Armado según cantidad de invitados</span>
+                <span><span class="card-meta-dot"></span>Armado según invitados</span>
+                <span class="price">$30.000 (ejemplo)</span>
               </div>
+              <button
+                class="btn-add"
+                type="button"
+                data-add-to-cart
+                data-name="Mesa dulce básica"
+                data-price="30000"
+              >
+                <span>+</span> Agregar al carrito
+              </button>
             </div>
           </article>
         </div>
@@ -978,24 +1271,22 @@
               <span class="section-label-dot"></span>
               Salados caseros
             </div>
-            <h2 class="section-title">Chipa misionera, scones y más</h2>
+            <h2 class="section-title">Chipa misionera, scones y bandejas</h2>
             <p class="section-subtitle">
               Para el mate, picadas o reuniones informales. Recetas saladas hechas en casa, con
               sabor a horno familiar.
             </p>
           </div>
           <div class="cards-section-meta">
-            Podés duplicar estas tarjetas si querés mostrar otros productos salados o combos
-            especiales.
+            Sumá bandejas al carrito y usalo como referencia para armar tu encargo.
           </div>
         </div>
 
         <div class="cards-grid">
-          <!-- TARJETA 1: Chipa -->
+          <!-- CHIPÁ -->
           <article class="card">
             <div class="card-img-wrapper">
-              <img src="img/chipa-1.JPG"
-                    alt="Chipa misionera casera recién horneada" />
+              <img src="img/chipa-1.JPG" alt="Chipa misionera casera" />
               <div class="card-pill">Clásico del mate</div>
             </div>
             <div class="card-body">
@@ -1008,15 +1299,24 @@
               </p>
               <div class="card-meta-row">
                 <span><span class="card-meta-dot"></span>Por docena o por kilo</span>
+                <span class="price">$4.800 / docena (ejemplo)</span>
               </div>
+              <button
+                class="btn-add"
+                type="button"
+                data-add-to-cart
+                data-name="Docena de chipa misionera"
+                data-price="4800"
+              >
+                <span>+</span> Agregar al carrito
+              </button>
             </div>
           </article>
 
-          <!-- TARJETA 2: Scones -->
+          <!-- SCONES -->
           <article class="card">
             <div class="card-img-wrapper">
-              <img src="img/scones-1.JPG"
-                    alt="Scones salados caseros sobre tabla de madera" />
+              <img src="img/scones-1.JPG" alt="Scones salados caseros" />
               <div class="card-pill">Para compartir</div>
             </div>
             <div class="card-body">
@@ -1029,31 +1329,86 @@
               </p>
               <div class="card-meta-row">
                 <span><span class="card-meta-dot"></span>Se pueden congelar</span>
+                <span class="price">$4.200 / docena (ejemplo)</span>
               </div>
+              <button
+                class="btn-add"
+                type="button"
+                data-add-to-cart
+                data-name="Docena de scones salados"
+                data-price="4200"
+              >
+                <span>+</span> Agregar al carrito
+              </button>
             </div>
           </article>
 
-          <!-- TARJETA 3: Combos -->
+          <!-- BANDEJA SALADA -->
           <article class="card">
             <div class="card-img-wrapper">
-              <img src="img/pan-nube-2.jpg"
-                   alt="Bandeja con pan nubes y salados caseros" />
+              <img src="img/pan-nube-2.jpg" alt="Bandeja con pan nubes y salados caseros" />
               <div class="card-pill">Combos para reuniones</div>
             </div>
             <div class="card-body">
               <div class="card-title-row">
-                <h3 class="card-title">Bandejas saladas</h3>
+                <h3 class="card-title">Bandeja salada surtida</h3>
               </div>
               <p class="card-text">
                 Combos de chipa, pan nubes salados, scones y otras opciones para que no falte nada en
                 la mesa.
               </p>
               <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Personalizá a tu gusto</span>
+                <span><span class="card-meta-dot"></span>Ideal para 6 a 8 personas</span>
+                <span class="price">$15.000 (ejemplo)</span>
               </div>
+              <button
+                class="btn-add"
+                type="button"
+                data-add-to-cart
+                data-name="Bandeja salada surtida"
+                data-price="15000"
+              >
+                <span>+</span> Agregar al carrito
+              </button>
             </div>
           </article>
         </div>
+      </section>
+
+      <!-- ACERCA DE MÍ -->
+      <section id="acerca" class="about" aria-label="Acerca de Luisa">
+        <div class="about-text">
+          <div class="section-label">
+            <span class="section-label-dot"></span>
+            Acerca de mí
+          </div>
+          <h2 class="section-title">Hola, soy Luisa</h2>
+          <p>
+            Soy pastelera profesional con muchos años de experiencia en tortas, panadería y productos
+            salados. Me encanta combinar lo clásico de la cocina casera con presentaciones prolijas y
+            cuidados detalles.
+          </p>
+          <p>
+            Trabajo por encargo, cuidando cada preparación como si fuera para mi propia familia:
+            elijo buenos ingredientes, respeto los tiempos de levado y horneado, y me ocupo de que
+            cada pedido llegue fresco y a tiempo.
+          </p>
+          <p class="about-highlight">
+            Mi objetivo es simple: que tu mesa se vea linda y que todo tenga sabor a “hecho en casa”.
+          </p>
+          <div class="about-badges">
+            <span class="about-badge">Tortas personalizadas</span>
+            <span class="about-badge">Pan nubes en muchos sabores</span>
+            <span class="about-badge">Bandejas dulces y saladas</span>
+          </div>
+        </div>
+        <aside class="about-card">
+          <strong>¿Qué puedo preparar para vos?</strong>
+          Cumpleaños · meriendas · desayunos sorpresa · reuniones familiares ·
+          eventos pequeños en oficina. <br />
+          También puedo adaptar recetas para gustos especiales (más suaves, más relleno, etc.).
+          <span class="about-tag">Hablamos por WhatsApp y armamos tu pedido juntos</span>
+        </aside>
       </section>
 
       <!-- CONTACTO / PEDIDOS -->
@@ -1065,15 +1420,27 @@
           </div>
           <h2 class="section-title">Encargá tus pan nubes, tortas o bandejas</h2>
           <p class="section-subtitle">
-            Escribí para coordinar sabores, cantidades, fechas y horarios de entrega. Todos los
-            pedidos son por encargo.
+            Usá el carrito como referencia y después escribí para coordinar sabores, cantidades,
+            fechas y horarios de entrega. Todos los pedidos son por encargo.
           </p>
 
           <ul class="contact-list">
             <!-- Cambiá los # por los datos reales de contacto -->
-            <li><strong>WhatsApp:</strong> 1234567890.</li>
-            <li><strong>Instagram:</strong> Instagram.</li>
-            <li><strong>Entrega:</strong> A coordinar (retiro por domicilio o delivery a convenir).</li>
+            <li>
+              <strong>WhatsApp:</strong>
+              <a href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">
+                +54 9 XX XXXX-XXXX
+              </a>
+            </li>
+            <li>
+              <strong>Instagram:</strong>
+              <a href="https://instagram.com/usuario.de.instagram" target="_blank" rel="noopener">
+                @usuario.de.instagram
+              </a>
+            </li>
+            <li>
+              <strong>Entrega:</strong> A coordinar (retiro por domicilio o delivery a convenir).
+            </li>
           </ul>
 
           <div class="contact-chip-row">
@@ -1083,21 +1450,163 @@
         </div>
 
         <aside class="contact-card">
-          <strong>¿Cómo hacer tu pedido?</strong>
-          1. Enviá un mensaje con el producto que te interesa (pan nubes, torta, bandeja dulce o
-          salada).<br />
-          2. Indicá fecha, horario aproximado y para cuántas personas será.<br />
-          3. Coordinamos sabores, detalles y forma de pago.
-          <small>Tip: Podés guardar esta página en tus favoritos para volver a ver los productos cuando quieras.</small>
+          <strong>¿Cómo usar el carrito?</strong>
+          1. Sumá pan nubes, tortas o bandejas con los botones “Agregar al carrito”.<br />
+          2. Mirá el total estimado y la lista de productos.<br />
+          3. Hacé clic en “Enviar resumen por WhatsApp” y copiá el detalle en tu mensaje.
+          <small>
+            Los precios son de ejemplo y pueden ajustarse; siempre se confirma el valor final al hablar
+            por WhatsApp.
+          </small>
         </aside>
       </section>
     </main>
 
     <footer class="footer">
-      <span>&copy; <strong>Pastelería de mamá</strong>. Todo hecho en casa, con dedicación.</span>
+      <span>&copy; <strong>Pastelería Luisa</strong>. Todo hecho en casa, con dedicación.</span>
       <span>Diseño web por su hijo ♥</span>
     </footer>
   </div>
+
+  <!-- PANEL DE CARRITO -->
+  <div class="cart-panel" id="cart-panel" aria-label="Carrito de productos">
+    <div class="cart-panel-header">
+      <div>
+        <div class="cart-panel-title">Tu carrito</div>
+        <small style="font-size:11px; color:var(--muted);">
+          Usalo como referencia antes de escribir por WhatsApp.
+        </small>
+      </div>
+      <button class="cart-panel-close" type="button" id="close-cart">×</button>
+    </div>
+    <ul class="cart-items" id="cart-items"></ul>
+    <div class="cart-empty" id="cart-empty">Todavía no agregaste productos.</div>
+    <div class="cart-summary">
+      <span>Total estimado</span>
+      <span class="cart-total" id="cart-total">$0</span>
+    </div>
+    <div class="cart-actions">
+      <button class="btn-cart-secondary" type="button" id="clear-cart">
+        Vaciar carrito
+      </button>
+      <button class="btn-cart-primary" type="button" id="copy-cart">
+        Copiar resumen para WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Carrito simple en memoria (no persiste si se recarga la página)
+    document.addEventListener("DOMContentLoaded", function () {
+      const cart = {};
+      const cartCountEl = document.getElementById("cart-count");
+      const cartPanel = document.getElementById("cart-panel");
+      const cartItemsEl = document.getElementById("cart-items");
+      const cartEmptyEl = document.getElementById("cart-empty");
+      const cartTotalEl = document.getElementById("cart-total");
+      const openCartMini = document.getElementById("open-cart-mini");
+      const closeCart = document.getElementById("close-cart");
+      const clearCart = document.getElementById("clear-cart");
+      const copyCart = document.getElementById("copy-cart");
+
+      function formatPrice(value) {
+        return "$" + value.toLocaleString("es-AR");
+      }
+
+      function updateCartDisplay() {
+        const entries = Object.values(cart);
+        const totalItems = entries.reduce((sum, item) => sum + item.qty, 0);
+        const totalPrice = entries.reduce(
+          (sum, item) => sum + item.qty * item.price,
+          0
+        );
+
+        cartCountEl.textContent = totalItems;
+
+        if (entries.length === 0) {
+          cartItemsEl.innerHTML = "";
+          cartEmptyEl.style.display = "block";
+        } else {
+          cartEmptyEl.style.display = "none";
+          cartItemsEl.innerHTML = "";
+          entries.forEach((item) => {
+            const li = document.createElement("li");
+            li.className = "cart-item";
+            li.innerHTML = `
+              <span class="cart-item-name">${item.name}</span>
+              <span class="cart-item-qty">x${item.qty}</span>
+              <span>${formatPrice(item.price * item.qty)}</span>
+            `;
+            cartItemsEl.appendChild(li);
+          });
+        }
+
+        cartTotalEl.textContent = formatPrice(totalPrice);
+      }
+
+      function addToCart(name, price) {
+        const key = name;
+        if (!cart[key]) {
+          cart[key] = { name, price, qty: 0 };
+        }
+        cart[key].qty += 1;
+        updateCartDisplay();
+      }
+
+      function openCart() {
+        cartPanel.style.display = "flex";
+      }
+
+      function hideCart() {
+        cartPanel.style.display = "none";
+      }
+
+      document.querySelectorAll("[data-add-to-cart]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const name = btn.getAttribute("data-name");
+          const price = Number(btn.getAttribute("data-price") || "0");
+          addToCart(name, price);
+          openCart();
+        });
+      });
+
+      openCartMini.addEventListener("click", openCart);
+      closeCart.addEventListener("click", hideCart);
+
+      clearCart.addEventListener("click", () => {
+        Object.keys(cart).forEach((key) => delete cart[key]);
+        updateCartDisplay();
+      });
+
+      copyCart.addEventListener("click", () => {
+        const entries = Object.values(cart);
+        if (entries.length === 0) {
+          alert("Todavía no agregaste productos al carrito.");
+          return;
+        }
+
+        let text = "Hola Luisa, quiero hacer un pedido y armé este carrito de referencia:%0A%0A";
+        entries.forEach((item) => {
+          text += `• ${item.name} x${item.qty} (${formatPrice(
+            item.price
+          )} c/u) = ${formatPrice(item.price * item.qty)}%0A`;
+        });
+        const total = entries.reduce(
+          (sum, item) => sum + item.qty * item.price,
+          0
+        );
+        text += `%0ATotal estimado: ${formatPrice(total)}%0A%0A¿Me contás disponibilidad y valor final?`;
+
+        // Abrir WhatsApp web/app con el texto prellenado (poné el número real)
+        const phone = "549XXXXXXXXXX"; // reemplazar por el número real sin + ni espacios
+        const url = `https://wa.me/${phone}?text=${text}`;
+        window.open(url, "_blank");
+      });
+
+      // Inicializar vista
+      updateCartDisplay();
+    });
+  </script>
 </body>
 </html>
 
