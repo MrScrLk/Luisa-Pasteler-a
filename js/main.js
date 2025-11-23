@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
         total
       )}%0A%0A¿Me contás disponibilidad y valor final?`;
 
-      const phone = "549XXXXXXXXXX"; // Reemplazar por número real (sin + ni espacios)
+      const phone = "5493513411147"; // Reemplazar por número real (sin + ni espacios)
       const url = `https://wa.me/${phone}?text=${text}`;
       window.open(url, "_blank");
     });
