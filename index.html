@@ -3,166 +3,251 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luisa Pastelería</title>
-  <meta name="description" content="Pastelería y salados artesanales. Pan nubes, tortas, budines saludables, focaccias, chipa y más." />
+  <title>Luisa Pastelería · Dulce & Salado artesanal</title>
+  <meta
+    name="description"
+    content="Luisa Pastelería: pan nubes, tortas, budines saludables, focaccias, chipa, scones y más. Todo artesanal."
+  />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
+<body data-whatsapp-number="549351000000">
+  <!-- PONER MI NÚMERO ACÁ DESPUÉS -->
 
-<body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-row">
-      <div class="brand">
-        <div class="brand-avatar">L</div>
-        <div class="brand-text">
-          <h1>LUISA PASTELERÍA</h1>
-          <p>Pastelería & salados artesanales</p>
+  <div class="site">
+
+    <!-- HEADER -->
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a href="#inicio" class="brand">
+          <div class="brand-logo">L</div>
+          <div class="brand-text">
+            <span class="brand-title">Luisa Pastelería</span>
+            <span class="brand-sub">Dulce & Salado artesanal</span>
+          </div>
+        </a>
+
+        <nav class="nav">
+          <a href="#inicio">Inicio</a>
+          <a href="#especialidad">Pan nubes</a>
+          <a href="#dulce">Dulce</a>
+          <a href="#salado">Salado</a>
+          <a href="#acerca">Acerca de mí</a>
+          <a href="#contacto" class="nav-pill">Encargá tu pedido</a>
+          <a href="catalogo.html" class="nav-pill nav-pill-outline">Ver catálogo</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main id="inicio">
+      <section class="hero">
+        <div class="hero-text">
+          <p class="hero-chip">Hecho en casa · Con amor</p>
+          <h1>Pan nubes, tortas y mesa dulce para tus momentos especiales</h1>
+          <p class="hero-sub">
+            Preparaciones caseras, pensadas para compartir: pan nubes de muchos sabores,
+            budines saludables, tortas, focaccias, chipa, scones y más.
+          </p>
+
+          <div class="hero-actions">
+            <a href="catalogo.html" class="btn-primary">Ver catálogo completo</a>
+            <button type="button" class="btn-secondary" data-whatsapp-general>
+              Escribime por WhatsApp
+            </button>
+          </div>
+
+          <div class="hero-tags">
+            <span>Pan nubes</span>
+            <span>Budines sin harina</span>
+            <span>Chipa misionera</span>
+            <span>Mesa dulce para eventos</span>
+          </div>
         </div>
-      </div>
 
-      <nav class="nav">
-        <a href="index.html" class="active">Inicio</a>
-        <a href="catalogo.html">Catálogo</a>
-        <a href="#acerca">Acerca de mí</a>
-        <a href="#pedido">Encargá tu pedido</a>
-      </nav>
+        <div class="hero-media">
+          <div class="hero-card hero-card-main">
+            <img src="img/hero-pan-nubes.JPG" alt="Bandeja de pan nubes surtidos" loading="lazy" />
+            <div class="hero-card-info">
+              <strong>Pan nubes surtidos</strong>
+              <span>La especialidad más pedida ✨</span>
+            </div>
+          </div>
 
-      <button class="cart-pill" id="open-cart">
-        🧺 <span>Carrito</span>
-        <strong id="cart-count">0</strong>
-      </button>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <span class="tag">Especialidad</span>
-        <h2>Pan nubes de muchos sabores</h2>
-        <p>
-          Suaves, livianos y perfectos para desayunos, picadas y eventos.
-          Dulces y salados, con variedades para todos los gustos.
-        </p>
-        <div class="hero-actions">
-          <a class="btn-primary" href="catalogo.html">Ver catálogo</a>
-          <a class="btn-ghost" href="#pedido">Encargar ahora</a>
+          <div class="hero-grid">
+            <div class="hero-card small">
+              <img src="img/Tarta-frutillas-1.jpeg" alt="Tarta de frutillas" loading="lazy" />
+              <span class="hero-label">Tartas dulces</span>
+            </div>
+            <div class="hero-card small">
+              <img src="img/chipa-1.JPG" alt="Chipa misionera" loading="lazy" />
+              <span class="hero-label">Chipa misionera</span>
+            </div>
+            <div class="hero-card small">
+              <img src="img/mesa-dulce-1.JPG" alt="Mesa dulce para eventos" loading="lazy" />
+              <span class="hero-label">Mesas dulces</span>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div class="hero-card">
-        <img src="img/hero-pan-nubes.JPG" alt="Pan nubes surtidos" loading="lazy" />
-        <div class="hero-card-badge">
-          <strong>Lo más vendido</strong>
-          <span>Pan nubes</span>
+      <!-- SECCIÓN ESPECIALIDAD: PAN NUBES -->
+      <section id="especialidad" class="section">
+        <div class="section-header">
+          <p class="section-chip">Especialidad de la casa</p>
+          <h2>Pan nubes en muchos sabores</h2>
+          <p>
+            Clásicos, dulces, con semillas, con harina de almendra, para pata y picadas, lomo
+            y especiados. Livianos, esponjosos y pensados para compartir.
+          </p>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- DESTACADOS -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <h3>Destacados</h3>
-        <p>Una selección rápida para que elijas sin perder tiempo.</p>
-      </div>
+        <div class="cards-row">
+          <article class="card">
+            <img src="img/pan-nube-1.jpg" alt="Pan nubes clásicos" loading="lazy" />
+            <div class="card-body">
+              <h3>Pan nubes clásicos</h3>
+              <p>Los de siempre: suaves y livianos, perfectos para el mate y el café.</p>
+              <button type="button" class="card-link" data-scroll-to="contacto">
+                Quiero encargar clásicos →
+              </button>
+            </div>
+          </article>
 
-      <div class="cards-grid" id="home-feature-grid">
-        <!-- JS inyecta destacados -->
-      </div>
-    </div>
-  </section>
+          <article class="card">
+            <img src="img/Nubes-Cacao-dulces-1.jpeg" alt="Nubes dulces sabor cacao" loading="lazy" />
+            <div class="card-body">
+              <h3>Nubes dulces</h3>
+              <p>Cacao, coco, naranja y más sabores para acompañar algo rico.</p>
+              <a href="catalogo.html#pan-nubes" class="card-link">
+                Ver sabores dulces →
+              </a>
+            </div>
+          </article>
 
-  <!-- ACERCA DE MI -->
-  <section class="section soft" id="acerca">
-    <div class="container about-grid">
-      <div class="about-photo">
-        <div class="about-photo-frame">
-          <span>🍰</span>
+          <article class="card">
+            <img src="img/Nubes-Pata-1.jpeg" alt="Nubes para pata y picadas" loading="lazy" />
+            <div class="card-body">
+              <h3>Nubes para picadas</h3>
+              <p>
+                Para pata flambeada, fiambres y mesas saladas. Ideales para eventos y reuniones.
+              </p>
+              <a href="catalogo.html#salado" class="card-link">
+                Ver opciones saladas →
+              </a>
+            </div>
+          </article>
         </div>
-      </div>
-      <div class="about-copy">
-        <h3>Acerca de mí</h3>
-        <p>
-          Soy Luisa, pastelera apasionada por lo artesanal. Me especializo en tortas,
-          mesas dulces y mi gran orgullo actual: los pan nubes en versiones dulces y saladas.
-        </p>
-        <p>
-          Trabajo con ingredientes frescos y recetas probadas para lograr sabores caseros,
-          ricos y con una presentación cuidada para cada ocasión.
-        </p>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- PEDIDO -->
-  <section class="section" id="pedido">
-    <div class="container order-grid">
-      <div>
-        <h3>Encargá tu pedido</h3>
-        <p>
-          Armá tu carrito y enviame el resumen por WhatsApp.
-          También podés consultar por pedidos personalizados.
-        </p>
-      </div>
+      <!-- DULCE -->
+      <section id="dulce" class="section section-split">
+        <div class="section-media">
+          <img src="img/Torta-selvanegra-1.jpeg" alt="Torta selvanegra" loading="lazy" />
+        </div>
+        <div class="section-content">
+          <p class="section-chip">Dulce</p>
+          <h2>Tortas, budines y tartas caseras</h2>
+          <p>
+            Desde budines sin harina ni azúcar refinada hasta tortas bien clásicas de
+            cumpleaños, tartas de fruta y mesas dulces completas para eventos.
+          </p>
+          <ul class="bullet-list">
+            <li>Budines saludables (almendra, nuez, sin harina de trigo).</li>
+            <li>Cheesecake, selvanegra, tortas personalizadas.</li>
+            <li>Tartas de frutillas, peras y almendras, y más sabores.</li>
+            <li>Medialunas, facturas y pepas & scones para desayunos.</li>
+          </ul>
+          <a href="catalogo.html#dulce" class="btn-ghost">Ver todo lo dulce →</a>
+        </div>
+      </section>
 
-      <div class="order-card">
-        <p class="order-line">
-          <strong>WhatsApp:</strong>
-          <!-- REEMPLAZÁ EL NÚMERO -->
-          <a class="wsp-link" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">
-            +54 9 XX XXXX-XXXX
-          </a>
-        </p>
-        <p class="muted">
-          Formato correcto: 54 + 9 + área sin 0 + número sin 15.
-        </p>
-        <a class="btn-primary full" href="catalogo.html">Ir al catálogo</a>
-      </div>
-    </div>
-  </section>
+      <!-- SALADO -->
+      <section id="salado" class="section section-split section-split-reverse">
+        <div class="section-media">
+          <img src="img/Focaccias-1.jpeg" alt="Focaccias caseras" loading="lazy" />
+        </div>
+        <div class="section-content">
+          <p class="section-chip">Salado</p>
+          <h2>Chipa, focaccias y scones salados</h2>
+          <p>
+            Para acompañar el mate, una picada o una mesa salada completa. Todo casero,
+            horneado en el momento.
+          </p>
+          <ul class="bullet-list">
+            <li>Chipa misionera bien quesuda.</li>
+            <li>Focaccias esponjosas con hierbas y toppings.</li>
+            <li>Scones salados para combinar con nubes y chipa.</li>
+            <li>Opciones para eventos y bandejas grandes.</li>
+          </ul>
+          <a href="catalogo.html#salado" class="btn-ghost">Ver todo lo salado →</a>
+        </div>
+      </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-row">
-      <p>© Pastelería Luisa.</p>
-      <p>Diseño web por su hijo ♥</p>
-    </div>
-  </footer>
+      <!-- ACERCA DE MI -->
+      <section id="acerca" class="section section-about">
+        <div class="section-header">
+          <p class="section-chip">Acerca de mí</p>
+          <h2>Hola, soy Luisa 🍰</h2>
+        </div>
+        <div class="about-grid">
+          <div>
+            <p>
+              Soy pastelera profesional y amo cocinar desde siempre. Trabajo con recetas
+              caseras, materias primas de calidad y mucha atención al detalle para que cada
+              bandeja llegue lista para disfrutar.
+            </p>
+            <p>
+              Puedo armarte desde un desayuno pequeño hasta una mesa dulce o salada completa
+              para eventos: cumpleaños, reuniones familiares, empresariales y más.
+            </p>
+            <p>
+              Todo se coordina por WhatsApp para ajustar sabores, cantidad de personas y
+              presupuesto.
+            </p>
+          </div>
+          <div class="about-highlight">
+            <div class="about-tag">Lo más pedido últimamente</div>
+            <ul>
+              <li>Pan nubes surtidos (dulces y salados).</li>
+              <li>Budines sin harina y sin azúcar.</li>
+              <li>Mesas dulces para 20 a 40 personas.</li>
+              <li>Chipa y focaccias para picadas.</li>
+            </ul>
+            <button type="button" class="btn-primary btn-full" data-whatsapp-general>
+              Consultar disponibilidad →
+            </button>
+          </div>
+        </div>
+      </section>
 
-  <!-- CARRITO (panel) -->
-  <aside class="cart-panel" id="cart-panel" aria-hidden="true">
-    <div class="cart-header">
-      <h4>Tu carrito</h4>
-      <button class="icon-btn" id="close-cart">✕</button>
-    </div>
+      <!-- CONTACTO -->
+      <section id="contacto" class="section section-contact">
+        <div class="section-header">
+          <p class="section-chip">Encargá tu pedido</p>
+          <h2>Coordinemos por WhatsApp</h2>
+          <p>
+            Contame qué evento tenés, para cuántas personas y qué tipo de cosas te gustaría:
+            pan nubes, dulce, salado o un mix.
+          </p>
+        </div>
 
-    <div class="cart-body">
-      <div id="cart-items" class="cart-items"></div>
-      <div class="cart-empty" id="cart-empty">
-        <p>Tu carrito está vacío.</p>
-      </div>
-    </div>
+        <div class="contact-card">
+          <p>Con un mensaje ya empezamos a armar tu pedido:</p>
+          <button type="button" class="btn-primary btn-big" data-whatsapp-general>
+            Abrir WhatsApp con mensaje listo
+          </button>
+          <p class="contact-note">
+            Desde el catálogo podés ver fotos y descripciones de cada producto.
+          </p>
+        </div>
+      </section>
+    </main>
 
-    <div class="cart-footer">
-      <div class="cart-total">
-        <span>Total</span>
-        <strong id="cart-total">$0</strong>
-      </div>
-      <button class="btn-ghost full" id="clear-cart">Vaciar carrito</button>
-      <button class="btn-primary full" id="send-wsp">Enviar pedido por WhatsApp</button>
-    </div>
-  </aside>
+    <footer class="footer">
+      <span>© <span id="year"></span> <strong>Pastelería de Luisa</strong></span>
+      <span>Diseño web por su hijo ♥</span>
+    </footer>
 
-  <div class="overlay" id="overlay"></div>
-
-  <!-- MODAL DE PRODUCTO -->
-  <div class="product-modal-backdrop" id="product-modal-backdrop">
-    <div class="product-modal">
-      <button class="product-modal-close" type="button" id="close-product-modal">×</button>
-      <div id="product-modal-content"></div>
-    </div>
   </div>
 
   <script src="js/main.js"></script>
