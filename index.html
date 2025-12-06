@@ -3,508 +3,168 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luisa Pastelería · Pan nubes, tortas & salados</title>
-  <meta
-    name="description"
-    content="Pastelería artesanal: pan nubes, tortas, facturas, chipa misionera, scones y más. Encargos por WhatsApp."
-  />
+  <title>Luisa Pastelería</title>
+  <meta name="description" content="Pastelería y salados artesanales. Pan nubes, tortas, budines saludables, focaccias, chipa y más." />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body>
-  <div class="page">
-    <header class="header">
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-row">
       <div class="brand">
-        <div class="brand-logo">L</div>
+        <div class="brand-avatar">L</div>
         <div class="brand-text">
-          <div class="brand-text-title">Luisa Pastelería</div>
-          <div class="brand-text-sub">Pan nubes · Tortas · Salados caseros</div>
+          <h1>LUISA PASTELERÍA</h1>
+          <p>Pastelería & salados artesanales</p>
         </div>
       </div>
+
       <nav class="nav">
-        <a href="#especialidad">Pan nubes</a>
-        <a href="#dulce">Dulce</a>
-        <a href="#salico">Salado</a>
-        <a href="#acerca">Acerca de mí</a>
+        <a href="index.html" class="active">Inicio</a>
         <a href="catalogo.html">Catálogo</a>
-        <a href="#contacto" class="nav-pill">Encargá tu pedido</a>
+        <a href="#acerca">Acerca de mí</a>
+        <a href="#pedido">Encargá tu pedido</a>
       </nav>
-      <button class="cart-mini" type="button" id="open-cart-mini">
-        <div class="cart-mini-icon">🛒</div>
-        <span>Carrito • <span class="cart-mini-count" id="cart-count">0</span> items</span>
+
+      <button class="cart-pill" id="open-cart">
+        🧺 <span>Carrito</span>
+        <strong id="cart-count">0</strong>
       </button>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <!-- HERO -->
-      <section class="hero" aria-label="Presentación principal">
-        <div class="hero-info">
-          <div class="hero-highlight">
-            Hecho a mano, por encargo · <span>Pastelería profesional</span>
-          </div>
-          <h1 class="hero-title">Dulces que abrazan, salados que acompañan</h1>
-          <p class="hero-text-main">
-            Pan nubes suaves, tortas de cumpleaños, facturas, chipa misionera, scones
-            y más. Todo hecho por Luisa con recetas caseras y muchos años de experiencia.
-          </p>
-          <div class="hero-badges">
-            <div class="hero-badge">Pan nubes · Lo más pedido</div>
-            <div class="hero-badge">Ideal para mate, desayunos y eventos</div>
-            <div class="hero-badge">Encargos personalizados</div>
-          </div>
-          <div class="hero-actions">
-            <a href="#especialidad" class="btn btn-primary">Ver pan nubes</a>
-            <a href="#dulce" class="btn btn-ghost">Ver pastelería dulce</a>
-          </div>
-          <div class="hero-note">
-            Cupos por semana · <span>Reservá con anticipación</span> para asegurar fecha.
-          </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="tag">Especialidad</span>
+        <h2>Pan nubes de muchos sabores</h2>
+        <p>
+          Suaves, livianos y perfectos para desayunos, picadas y eventos.
+          Dulces y salados, con variedades para todos los gustos.
+        </p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="catalogo.html">Ver catálogo</a>
+          <a class="btn-ghost" href="#pedido">Encargar ahora</a>
         </div>
-
-        <div class="hero-media">
-          <div class="hero-photo-main">
-            <img src="img/hero-pan-nubes.JPG" alt="Mesa con pan nubes, tortas y productos de pastelería" />
-          </div>
-          <div class="hero-floating-card">
-            <div class="hero-floating-title">Pedidos más frecuentes</div>
-            <div class="hero-floating-chip-row">
-              <span class="chip">Pan nubes por docena</span>
-              <span class="chip">Tortas de cumpleaños</span>
-              <span class="chip">Bandejas dulces y saladas</span>
-            </div>
-            <div class="hero-floating-badge">★ Hecho en casa, como antes</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ESPECIALIDAD PAN NUBES -->
-      <section id="especialidad" class="specialty" aria-label="Especialidad en pan nubes">
-        <div class="specialty-top">
-          <div>
-            <div class="specialty-tag">Especialidad · Pan nubes</div>
-            <h2 class="section-title">Pan nubes suaves, livianos y esponjosos</h2>
-            <p class="section-subtitle">
-              Ideales para desayunos, meriendas y para acompañar el mate. Se pueden rellenar, tostar
-              o comer así tal cual. ¡Son los favoritos de todos!
-            </p>
-          </div>
-          <div>
-            <div class="specialty-pill">Top ventas de hoy en día</div>
-          </div>
-        </div>
-
-        <div class="specialty-grid">
-          <article class="specialty-main-card">
-            <div class="specialty-main-card-header">
-              <div>
-                <h3 class="specialty-main-title">Sabores de pan nubes</h3>
-                <p class="specialty-main-tagline">
-                  Combinalos como quieras: simples, rellenos o tostados.
-                </p>
-              </div>
-              <span class="card-badge">Hechos por docena</span>
-            </div>
-            <div class="specialty-flavors">
-              <div class="flavor-pill">Clásico</div>
-              <div class="flavor-pill">Queso</div>
-              <div class="flavor-pill">Jamón y queso</div>
-              <div class="flavor-pill">Provenzal</div>
-              <div class="flavor-pill">Orégano</div>
-              <div class="flavor-pill">Semillas</div>
-            </div>
-            <p class="specialty-note">
-              Consultá por sabores especiales o rellenos extra. Se pueden
-              <strong>congelar</strong> y regenerar en horno o airfryer.
-            </p>
-            <div class="card-meta-row" style="margin-top:10px;">
-              <span><span class="card-meta-dot"></span>Precio referencia</span>
-              <span class="price">$4.500 / docena (ejemplo)</span>
-            </div>
-            <button
-              class="btn-add"
-              type="button"
-              data-add-to-cart
-              data-name="Pan nubes surtidos (docena)"
-              data-price="4500"
-            >
-              <span>+</span> Agregar al carrito
-            </button>
-          </article>
-
-          <div class="specialty-gallery">
-            <figure class="photo-card">
-              <img
-                src="img/pan-nube-1.jpg"
-                alt="Pan nubes clásicos sobre tabla de madera"
-                class="photo-card-img"
-              />
-              <figcaption class="photo-card-label">Clásicos recién horneados</figcaption>
-            </figure>
-
-            <figure class="photo-card">
-              <img
-                src="img/pan-nube-2.jpg"
-                alt="Pan nubes de distintos sabores"
-                class="photo-card-img"
-              />
-              <figcaption class="photo-card-label">Degustación de sabores</figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      <!-- DULCE -->
-      <section id="dulce" aria-label="Pastelería dulce">
-        <div class="cards-section-header">
-          <div>
-            <div class="section-label">
-              <span class="section-label-dot"></span>
-              Pastelería dulce
-            </div>
-            <h2 class="section-title">Tortas, facturas & mesas dulces</h2>
-            <p class="section-subtitle">
-              Desde tortas de cumpleaños hasta bandejas completas para compartir. Todo hecho con
-              ingredientes seleccionados y terminaciones prolijas.
-            </p>
-          </div>
-          <div class="cards-section-meta">
-            Elegí un producto y agrégalo al carrito para calcular cantidades y total de tu pedido.
-          </div>
-        </div>
-
-        <div class="cards-grid">
-          <!-- TORTAS -->
-          <article class="card">
-            <div class="card-img-wrapper">
-              <img src="img/torta-1.JPG" alt="Torta de cumpleaños decorada con crema y frutas" />
-              <div class="card-pill">Tortas personalizadas</div>
-            </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Torta de cumpleaños</h3>
-                <span class="card-badge">Diseños a medida</span>
-              </div>
-              <p class="card-text">
-                Bizcochuelos húmedos, rellenos cremosos y decoración adaptada a la temática que
-                quieras: nombres, edades, personajes y más.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Para 12 a 20 porciones</span>
-                <span class="price">$18.000 (ejemplo)</span>
-              </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Torta de cumpleaños"
-                data-price="18000"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-            </div>
-          </article>
-
-          <!-- FACTURAS -->
-          <article class="card">
-            <div class="card-img-wrapper">
-              <img src="img/facturas-1.JPG" alt="Medialunas y facturas variadas" />
-              <div class="card-pill">Desayunos & meriendas</div>
-            </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Medialunas y facturas</h3>
-              </div>
-              <p class="card-text">
-                Ideales para la oficina, el cole o reuniones familiares. Podés armar bandejas mixtas
-                con variedad de sabores.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Por docena o por bandeja</span>
-                <span class="price">$5.200 / docena (ejemplo)</span>
-              </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Docena de facturas surtidas"
-                data-price="5200"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-            </div>
-          </article>
-
-          <!-- MESA DULCE -->
-          <article class="card">
-            <div class="card-img-wrapper">
-              <img src="img/mesa-dulce-1.JPG" alt="Mesa dulce con diferentes postres" />
-              <div class="card-pill">Eventos especiales</div>
-            </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Mesa dulce</h3>
-              </div>
-              <p class="card-text">
-                Combos de mini tartas, shots dulces, cuadrados, cookies y más. Perfecto para
-                cumpleaños, bautismos y reuniones.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Armado según invitados</span>
-                <span class="price">$30.000 (ejemplo)</span>
-              </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Mesa dulce básica"
-                data-price="30000"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- SALADO -->
-      <section id="salico" aria-label="Salados caseros">
-        <div class="cards-section-header">
-          <div>
-            <div class="section-label">
-              <span class="section-label-dot"></span>
-              Salados caseros
-            </div>
-            <h2 class="section-title">Chipa misionera, scones y bandejas</h2>
-            <p class="section-subtitle">
-              Para el mate, picadas o reuniones informales. Recetas saladas hechas en casa, con
-              sabor a horno familiar.
-            </p>
-          </div>
-          <div class="cards-section-meta">
-            Sumá bandejas al carrito y usalo como referencia para armar tu encargo.
-          </div>
-        </div>
-
-        <div class="cards-grid">
-          <!-- CHIPÁ -->
-          <article class="card">
-            <div class="card-img-wrapper">
-              <img src="img/chipa-1.JPG" alt="Chipa misionera casera" />
-              <div class="card-pill">Clásico del mate</div>
-            </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Chipa misionera</h3>
-              </div>
-              <p class="card-text">
-                Suaves por dentro, dorados por fuera. Ideales para acompañar el mate o el café de la
-                tarde.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Por docena o por kilo</span>
-                <span class="price">$4.800 / docena (ejemplo)</span>
-              </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Docena de chipa misionera"
-                data-price="4800"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-            </div>
-          </article>
-
-          <!-- SCONES -->
-          <article class="card">
-            <div class="card-img-wrapper">
-              <img src="img/scones-1.JPG" alt="Scones salados caseros" />
-              <div class="card-pill">Para compartir</div>
-            </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Scones salados</h3>
-              </div>
-              <p class="card-text">
-                Livianos, sabrosos y perfectos para una picada distinta. Consultá por sabores y
-                rellenos.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Se pueden congelar</span>
-                <span class="price">$4.200 / docena (ejemplo)</span>
-              </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Docena de scones salados"
-                data-price="4200"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-            </div>
-          </article>
-
-          <!-- BANDEJA SALADA -->
-          <article class="card">
-            <div class="card-img-wrapper">
-              <img src="img/pan-nube-2.jpg" alt="Bandeja con pan nubes y salados caseros" />
-              <div class="card-pill">Combos para reuniones</div>
-            </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Bandeja salada surtida</h3>
-              </div>
-              <p class="card-text">
-                Combos de chipa, pan nubes salados, scones y otras opciones para que no falte nada en
-                la mesa.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Ideal para 6 a 8 personas</span>
-                <span class="price">$15.000 (ejemplo)</span>
-              </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Bandeja salada surtida"
-                data-price="15000"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- ACERCA DE MÍ -->
-      <section id="acerca" class="about" aria-label="Acerca de Luisa">
-        <div class="about-text">
-          <div class="section-label">
-            <span class="section-label-dot"></span>
-            Acerca de mí
-          </div>
-          <h2 class="section-title">Hola, soy Luisa</h2>
-          <p>
-            Soy pastelera profesional con muchos años de experiencia en tortas, panadería y productos
-            salados. Me encanta combinar lo clásico de la cocina casera con presentaciones prolijas y
-            cuidados detalles.
-          </p>
-          <p>
-            Trabajo por encargo, cuidando cada preparación como si fuera para mi propia familia:
-            elijo buenos ingredientes, respeto los tiempos de levado y horneado, y me ocupo de que
-            cada pedido llegue fresco y a tiempo.
-          </p>
-          <p class="about-highlight">
-            Mi objetivo es simple: que tu mesa se vea linda y que todo tenga sabor a “hecho en casa”.
-          </p>
-          <div class="about-badges">
-            <span class="about-badge">Tortas personalizadas</span>
-            <span class="about-badge">Pan nubes en muchos sabores</span>
-            <span class="about-badge">Bandejas dulces y saladas</span>
-          </div>
-        </div>
-        <aside class="about-card">
-          <strong>¿Qué puedo preparar para vos?</strong>
-          Cumpleaños · meriendas · desayunos sorpresa · reuniones familiares ·
-          eventos pequeños en oficina. <br />
-          También puedo adaptar recetas para gustos especiales (más suaves, más relleno, etc.).
-          <span class="about-tag">Hablamos por WhatsApp y armamos tu pedido juntos</span>
-        </aside>
-      </section>
-
-      <!-- CONTACTO / PEDIDOS -->
-      <section id="contacto" class="contact" aria-label="Contacto y pedidos">
-        <div>
-          <div class="section-label">
-            <span class="section-label-dot"></span>
-            Pedidos & consultas
-          </div>
-          <h2 class="section-title">Encargá tus pan nubes, tortas o bandejas</h2>
-          <p class="section-subtitle">
-            Usá el carrito como referencia y después escribí para coordinar sabores, cantidades,
-            fechas y horarios de entrega. Todos los pedidos son por encargo.
-          </p>
-
-          <ul class="contact-list">
-            <li>
-              <strong>WhatsApp:</strong>
-              <a href="https://wa.me/5493513411147" target="_blank" rel="noopener">
-                +5493513411147
-              </a>
-            </li>
-            <li>
-              <strong>Instagram:</strong>
-              <a href="https://www.instagram.com/luisapasteleria/" target="_blank" rel="noopener">
-                @luisapasteleria
-              </a>
-            </li>
-            <li>
-              <strong>Entrega:</strong> A coordinar (retiro por domicilio o delivery a convenir).
-            </li>
-          </ul>
-
-          <div class="contact-chip-row">
-            <span class="contact-chip">Pedidos con al menos 48 hs de anticipación</span>
-            <span class="contact-chip">Consultá por fechas especiales (Día de la Madre, etc.)</span>
-          </div>
-        </div>
-
-        <aside class="contact-card">
-          <strong>¿Cómo usar el carrito?</strong>
-          1. Sumá pan nubes, tortas o bandejas con los botones “Agregar al carrito”.<br />
-          2. Mirá el total estimado y la lista de productos.<br />
-          3. Hacé clic en “Enviar resumen por WhatsApp” y copiá el detalle en tu mensaje.
-          <small>
-            Los precios son de ejemplo y pueden ajustarse; siempre se confirma el valor final al hablar
-            por WhatsApp.
-          </small>
-        </aside>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <span>&copy; <strong>Luisa Pastelería</strong>. Todo hecho en casa, con dedicación.</span>
-      <span>Diseño web por su hijo ♥</span>
-    </footer>
-  </div>
-
-  <!-- PANEL DE CARRITO -->
-  <div class="cart-panel" id="cart-panel" aria-label="Carrito de productos">
-    <div class="cart-panel-header">
-      <div>
-        <div class="cart-panel-title">Tu carrito</div>
-        <small style="font-size:11px; color:var(--muted);">
-          Usalo como referencia antes de escribir por WhatsApp.
-        </small>
       </div>
-      <button class="cart-panel-close" type="button" id="close-cart">×</button>
+
+      <div class="hero-card">
+        <img src="img/hero-pan-nubes.JPG" alt="Pan nubes surtidos" loading="lazy" />
+        <div class="hero-card-badge">
+          <strong>Lo más vendido</strong>
+          <span>Pan nubes</span>
+        </div>
+      </div>
     </div>
-    <ul class="cart-items" id="cart-items"></ul>
-    <div class="cart-empty" id="cart-empty">Todavía no agregaste productos.</div>
-    <div class="cart-summary">
-      <span>Total estimado</span>
-      <span class="cart-total" id="cart-total">$0</span>
+  </section>
+
+  <!-- DESTACADOS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h3>Destacados</h3>
+        <p>Una selección rápida para que elijas sin perder tiempo.</p>
+      </div>
+
+      <div class="cards-grid" id="home-feature-grid">
+        <!-- JS inyecta destacados -->
+      </div>
     </div>
-    <div class="cart-actions">
-      <button class="btn-cart-secondary" type="button" id="clear-cart">
-        Vaciar carrito
-      </button>
-      <button class="btn-cart-primary" type="button" id="copy-cart">
-        Copiar resumen para WhatsApp
-      </button>
+  </section>
+
+  <!-- ACERCA DE MI -->
+  <section class="section soft" id="acerca">
+    <div class="container about-grid">
+      <div class="about-photo">
+        <div class="about-photo-frame">
+          <span>🍰</span>
+        </div>
+      </div>
+      <div class="about-copy">
+        <h3>Acerca de mí</h3>
+        <p>
+          Soy Luisa, pastelera apasionada por lo artesanal. Me especializo en tortas,
+          mesas dulces y mi gran orgullo actual: los pan nubes en versiones dulces y saladas.
+        </p>
+        <p>
+          Trabajo con ingredientes frescos y recetas probadas para lograr sabores caseros,
+          ricos y con una presentación cuidada para cada ocasión.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEDIDO -->
+  <section class="section" id="pedido">
+    <div class="container order-grid">
+      <div>
+        <h3>Encargá tu pedido</h3>
+        <p>
+          Armá tu carrito y enviame el resumen por WhatsApp.
+          También podés consultar por pedidos personalizados.
+        </p>
+      </div>
+
+      <div class="order-card">
+        <p class="order-line">
+          <strong>WhatsApp:</strong>
+          <!-- REEMPLAZÁ EL NÚMERO -->
+          <a class="wsp-link" href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener">
+            +54 9 XX XXXX-XXXX
+          </a>
+        </p>
+        <p class="muted">
+          Formato correcto: 54 + 9 + área sin 0 + número sin 15.
+        </p>
+        <a class="btn-primary full" href="catalogo.html">Ir al catálogo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>© Pastelería Luisa.</p>
+      <p>Diseño web por su hijo ♥</p>
+    </div>
+  </footer>
+
+  <!-- CARRITO (panel) -->
+  <aside class="cart-panel" id="cart-panel" aria-hidden="true">
+    <div class="cart-header">
+      <h4>Tu carrito</h4>
+      <button class="icon-btn" id="close-cart">✕</button>
+    </div>
+
+    <div class="cart-body">
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-empty" id="cart-empty">
+        <p>Tu carrito está vacío.</p>
+      </div>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cart-total">$0</strong>
+      </div>
+      <button class="btn-ghost full" id="clear-cart">Vaciar carrito</button>
+      <button class="btn-primary full" id="send-wsp">Enviar pedido por WhatsApp</button>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+
+  <!-- MODAL DE PRODUCTO -->
+  <div class="product-modal-backdrop" id="product-modal-backdrop">
+    <div class="product-modal">
+      <button class="product-modal-close" type="button" id="close-product-modal">×</button>
+      <div id="product-modal-content"></div>
     </div>
   </div>
 
   <script src="js/main.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
