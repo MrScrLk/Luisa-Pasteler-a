@@ -334,3 +334,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
+
+
+// =========================
+// BOTÓN VOLVER ARRIBA
+// =========================
+
+(function initBackToTop(){
+  const btn = document.getElementById("back-to-top");
+  if (!btn) return;
+
+  const toggleVisibility = () => {
+    if (window.scrollY > 260) {
+      btn.classList.add("is-visible");
+    } else {
+      btn.classList.remove("is-visible");
+    }
+  };
+
+  toggleVisibility();
+  window.addEventListener("scroll", toggleVisibility, { passive: true });
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+})();
+
