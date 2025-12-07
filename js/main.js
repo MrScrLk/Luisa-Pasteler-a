@@ -534,7 +534,7 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.style.width = "48px";
       btn.style.height = "48px";
       btn.style.right = "14px";
-      btn.style.bottom = "76px";
+      btn.style.bottom = "72px";
       btn.style.borderRadius = "14px";
       btn.style.fontSize = "22px";
     } else {
