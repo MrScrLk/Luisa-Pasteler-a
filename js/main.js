@@ -329,14 +329,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-
- 
-
-
-});
-
-
-
 // =========================
 // BOTÓN VOLVER ARRIBA (AUTO)
 // =========================
@@ -382,5 +374,10 @@ document.addEventListener("DOMContentLoaded", () => {
     init();
   }
 })();
+
+ 
+
+
+});
 
 
