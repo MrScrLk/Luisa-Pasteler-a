@@ -328,34 +328,104 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+});
 
-// =========================
-// BOTÓN VOLVER ARRIBA NUEVO
-// =========================
+// ==========================================
+// BOTÓN VOLVER ARRIBA
+// ==========================================
 (function () {
-  const btn = document.getElementById("luisa-btt");
-  if (!btn) return;
+  function killOldButtons() {
+    // borra por id
+    const oldById = document.getElementById("back-to-top");
+    if (oldById) oldById.remove();
 
-  const toggle = () => {
-    btn.classList.toggle("is-visible", window.scrollY > 240);
-  };
+    // borra por clase
+    document.querySelectorAll(".back-to-top").forEach(b => b.remove());
+  }
 
-  toggle();
-  window.addEventListener("scroll", toggle, { passive: true });
+  function createNewButton() {
+    const btn = document.createElement("button");
+    btn.id = "luisa-btt";
+    btn.type = "button";
+    btn.setAttribute("aria-label", "Volver arriba");
+    btn.textContent = "🧁";
 
-  btn.addEventListener("click", () => {
-    // mini efecto pop
-    btn.style.transform = "translateY(-2px) scale(0.96)";
-    setTimeout(() => (btn.style.transform = ""), 120);
+    // Estilos INLINE para que sea imposible que quede a la izquierda
+    btn.style.position = "fixed";
+    btn.style.right = "22px";
+    btn.style.bottom = "22px";
+    btn.style.left = "auto";
+    btn.style.zIndex = "999999";
+    btn.style.width = "56px";
+    btn.style.height = "56px";
+    btn.style.borderRadius = "18px";
+    btn.style.border = "0";
+    btn.style.cursor = "pointer";
+    btn.style.display = "grid";
+    btn.style.placeItems = "center";
+    btn.style.fontSize = "24px";
+    btn.style.boxShadow = "0 18px 40px rgba(255,47,146,.35), 0 8px 18px rgba(0,0,0,.12)";
+    btn.style.background = "linear-gradient(135deg, #ff2f92, #ff7ad9, #ff5d5d)";
+    btn.style.color = "#fff";
+    btn.style.opacity = "0";
+    btn.style.transform = "translateY(10px) scale(.95)";
+    btn.style.transition = "opacity .25s ease, transform .25s ease, filter .2s ease";
 
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+    // Hover lindo
+    btn.addEventListener("mouseenter", () => {
+      btn.style.filter = "brightness(1.08) saturate(1.1)";
+      btn.style.transform = "translateY(-2px) scale(1.04)";
+    });
+    btn.addEventListener("mouseleave", () => {
+      btn.style.filter = "";
+      // vuelve según estado visible
+      btn.style.transform = btn.dataset.visible === "1"
+        ? "translateY(0) scale(1)"
+        : "translateY(10px) scale(.95)";
+    });
+
+    // Click = subir + mini pop
+    btn.addEventListener("click", () => {
+      btn.style.transform = "translateY(-2px) scale(.96)";
+      setTimeout(() => {
+        btn.style.transform = "translateY(0) scale(1)";
+      }, 120);
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    document.body.appendChild(btn);
+    return btn;
+  }
+
+  function init() {
+    killOldButtons();
+    const btn = createNewButton();
+
+    const toggle = () => {
+      if (window.scrollY > 240) {
+        btn.style.opacity = "1";
+        btn.style.transform = "translateY(0) scale(1)";
+        btn.style.pointerEvents = "auto";
+        btn.dataset.visible = "1";
+      } else {
+        btn.style.opacity = "0";
+        btn.style.transform = "translateY(10px) scale(.95)";
+        btn.style.pointerEvents = "none";
+        btn.dataset.visible = "0";
+      }
+    };
+
+    toggle();
+    window.addEventListener("scroll", toggle, { passive: true });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
 })();
 
-
- 
-
-
-});
 
 
