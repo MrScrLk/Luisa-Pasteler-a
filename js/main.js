@@ -338,26 +338,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // =========================
-// BOTÓN VOLVER ARRIBA
+// BOTÓN VOLVER ARRIBA (AUTO)
 // =========================
+(function () {
+  function createBackToTopIfMissing() {
+    let btn = document.getElementById("back-to-top");
 
-(function initBackToTop(){
-  const btn = document.getElementById("back-to-top");
-  if (!btn) return;
-
-  const toggleVisibility = () => {
-    if (window.scrollY > 260) {
-      btn.classList.add("is-visible");
-    } else {
-      btn.classList.remove("is-visible");
+    if (!btn) {
+      btn = document.createElement("button");
+      btn.className = "back-to-top";
+      btn.id = "back-to-top";
+      btn.type = "button";
+      btn.setAttribute("aria-label", "Volver arriba");
+      btn.textContent = "↑";
+      document.body.appendChild(btn);
     }
-  };
 
-  toggleVisibility();
-  window.addEventListener("scroll", toggleVisibility, { passive: true });
+    return btn;
+  }
 
-  btn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+  function init() {
+    const btn = createBackToTopIfMissing();
+
+    const toggleVisibility = () => {
+      if (window.scrollY > 220) {
+        btn.classList.add("is-visible");
+      } else {
+        btn.classList.remove("is-visible");
+      }
+    };
+
+    toggleVisibility();
+    window.addEventListener("scroll", toggleVisibility, { passive: true });
+
+    btn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
 })();
+
 
